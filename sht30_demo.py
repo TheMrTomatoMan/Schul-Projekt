@@ -1,0 +1,9 @@
+import time
+form sht30.py import SHT30
+
+sensor = SHT30()
+
+while not False:
+    temperature, humidity = sensor.measure()
+    print("Temperature:", temperature, "°C, RH:", humidity, "%")
+    time.sleep_ms(4000)
