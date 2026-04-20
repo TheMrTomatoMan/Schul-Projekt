@@ -1,0 +1,9 @@
+
+[
+    { "time": "08:00", "temperature": 12},
+    { "time": "09:00", "temperature": 13},
+    { "time": "10:00", "temperature": 14},
+    { "time": "11:00", "temperature": 15},
+    { "time": "12:00", "temperature": 18},
+    { "time": "13:00", "temperature": 22}
+]
