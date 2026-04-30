@@ -1,5 +1,5 @@
 import time
-form sht30.py import SHT30
+from sht30.py import SHT30
 
 sensor = SHT30()
 

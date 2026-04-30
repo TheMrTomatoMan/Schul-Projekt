@@ -6,4 +6,10 @@ import os, machine
 import gc
 #import webrepl
 #webrepl.start()
+import time
+from hygrometer import boden_feuchte
 gc.collect()
+
+while True:
+    print(f"Boden Feuchte: {boden_feuchte()}%")
+    time.sleep(5)
