@@ -8,8 +8,12 @@ import gc
 #webrepl.start()
 import time
 from hygrometer import boden_feuchte
+from sht30_output import sht_humidity, sht_temp
 gc.collect()
 
 while True:
     print(f"Boden Feuchte: {boden_feuchte()}%")
+    print(f"Temperatur on Board: {sht_temp()}°C")
+    print(f"Luftfeuchtigkeit on Board: {sht_humidity}% Rel")
+    
     time.sleep(5)

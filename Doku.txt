@@ -1,0 +1,14 @@
+Bodenfeuchte messgerät
+"+" auf 3.3V Anschließen
+"-" auf Ground Anschließen
+"S" auf A0 Anschließen
+
+Thermometer
+"VCC" auf 3.3V Anschließen
+"GND" auf Ground Anschließen
+"SDA" auf D2 Anschließen
+"SCL" auf D1 Anschließen
+
+
+0x45 SHT30 Adress = 0x45
+0x48 Thermometer Adress = 0x48
