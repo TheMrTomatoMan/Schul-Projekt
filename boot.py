@@ -9,11 +9,12 @@ import gc
 import time
 from hygrometer import boden_feuchte
 from sht30_output import sht_humidity, sht_temp
+from thermometer import temperatur2
 gc.collect()
 
-while True:
+'''while True:
     print(f"Boden Feuchte: {boden_feuchte()}%")
     print(f"Temperatur on Board: {sht_temp()}°C")
     print(f"Luftfeuchtigkeit on Board: {sht_humidity}% Rel")
-    
-    time.sleep(5)
+    print(f"Temperatur an Temperatur sensor: {temperatur2}°C")
+    time.sleep(5)'''
