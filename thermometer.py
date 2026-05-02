@@ -3,11 +3,13 @@ import time
 
 i2c = machine.I2C(scl=machine.Pin(5), sda=machine.Pin(4), freq=100000)
 
-print(i2c)
+
 
 def temperatur2():
-    data= i2c.readfrom(0x49, 1)
+    data= i2c.readfrom_mem(0x49, 0x00, 2)
 
-    value = int.from_bytes(data, 'big')
-    return value
-
+    raw = (data[0] << 8) | data[1]
+    raw = raw >> 5
+    temp = raw * 0.125
+    temp = round(temp, 1)
+    return temp
