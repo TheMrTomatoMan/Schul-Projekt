@@ -15,4 +15,5 @@ def boden_feuchte():
     value = (voltage - dry) / (wet - dry) * 100
     #umrechnung in %
     prozent = max(0, min(100, value))
+    prozent = round(prozent,1)
     return prozent
