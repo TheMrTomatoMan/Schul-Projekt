@@ -2,8 +2,10 @@ import json
 from hygrometer import boden_feuchte
 from sht30_output import sht_humidity, sht_temp 
 from thermometer import temperatur2
+from datetime import datetime
 
-data = {"Boden Feuchtigkeit": f"{boden_feuchte()}%",
+data = {"Time": f"{datetime.now().strftime("%H:%M:%S")}",
+        "Boden Feuchtigkeit": f"{boden_feuchte()}%",
         "Temperatur von SHT30": f"{sht_temp()}°C",
         "Luftfeuchte von SHT30": f"{sht_humidity()}%Rel",
         "Temeratur von Sensor": f"{temperatur2()}°C"
