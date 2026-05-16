@@ -1,17 +1,28 @@
 import json
 from hygrometer import boden_feuchte
-from sht30_output import sht_humidity, sht_temp 
+from sht30_output import sht_humidity, sht_temp
 from thermometer import temperatur2
-from datetime import datetime
+import time
 
-data = {"Time": f"{datetime.now().strftime("%H:%M:%S")}",
-        "Boden Feuchtigkeit": f"{boden_feuchte()}%",
-        "Temperatur von SHT30": f"{sht_temp()}°C",
-        "Luftfeuchte von SHT30": f"{sht_humidity()}%Rel",
-        "Temeratur von Sensor": f"{temperatur2()}°C"
-        }
-json_str = json.dumps(data)
-json_str = json_str.replace(",", ",\n")
 def json_write():
-    with open ("data.json", "w") as f:
+    t = time.localtime()
+    timestamp = "{:02d}:{:02d}:{:02d}".format(t[3], t[4], t[5])
+
+    json_str = (
+        '{{\n'
+        '  "Time": "{}",\n'
+        '  "Temperatur von SHT30": "{}",\n'
+        '  "Luftfeuchte von SHT30": "{}",\n'
+        '  "Temeratur von Sensor": "{}",\n'
+        '  "Boden Feuchtigkeit": "{}"\n'
+        '}}'
+    ).format(
+        timestamp,
+        "{}°C".format(sht_temp()),
+        "{}%Rel".format(sht_humidity()),
+        "{}°C".format(temperatur2()),
+        "{}%".format(boden_feuchte())
+    )
+
+    with open("data.json", "w") as f:
         f.write(json_str)

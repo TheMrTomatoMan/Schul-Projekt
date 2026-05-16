@@ -2,3 +2,6 @@ test.py
 __pycache__/ESP8266WebServer.cpython-313.pyc
 __pycache__/hygrometer.cpython-313.pyc
 data.xml
+data.json
+.gitignore
+.gitignore

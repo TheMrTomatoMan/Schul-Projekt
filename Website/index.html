@@ -16,5 +16,32 @@
         element.classList.toggle("dark-mode");
       }
     </script>
+
+    <p>Bodenfeuchte: <span id="boden">...</span></p>
+    <p>Temperatur SHT30: <span id="temp_sht">...</span></p>
+    <p>Luftfeuchte SHT30: <span id="luft_sht">...</span></p>
+    <p>Temperatur Sensor: <span id="temp_sen">...</span></p>
+
+    <script>
+      function updateData() {
+        fetch("/data")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            document.getElementById("boden").innerText =
+              data["Boden Feuchtigkeit"];
+            document.getElementById("temp_sht").innerText =
+              data["Temperatur von SHT30"];
+            document.getElementById("luft_sht").innerText =
+              data["Luftfeuchte von SHT30"];
+            document.getElementById("temp_sen").innerText =
+              data["Temeratur von Sensor"];
+          });
+      }
+
+      updateData(); // lädt 1x sofort
+      setInterval(updateData, 10000); // danach alle 10 Sekunden
+    </script>
   </body>
 </html>
