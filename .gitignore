@@ -4,4 +4,5 @@ __pycache__/hygrometer.cpython-313.pyc
 data.xml
 data.json
 .gitignore
-.gitignore
+website/data/data_last_x.json
+website/data/data_last_x.xml

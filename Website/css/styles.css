@@ -6,17 +6,18 @@ body {
 }
 
 .dark-mode {
-  background-color: #b8b8b8;
+  background-color: #353535;
+  color: #ffffff;
 }
 
 h1{
-    color: black;
     font-size: xx-large;
     font-family: Arial, sans-serif;
     text-align: center;
-    text-underline-offset: initial;
     font-size: 300%;
+    text-decoration:underline;
 }
+
 p {
   margin: 50px;
 
@@ -32,4 +33,16 @@ footer {
   background-color: #f4f4f4;
   text-align: center;
   padding: 1rem;
+}
+
+.daten{
+  position: relative;
+  text-align: left;
+  text-indent: 17.5%;
+  
+}
+
+.authoren{
+  font-family: Arial, sans-serif;
+  position:absolute; top: 1px;right: 30px;
 }

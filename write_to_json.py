@@ -24,5 +24,5 @@ def json_write():
         "{}%".format(boden_feuchte())
     )
 
-    with open("data.json", "w") as f:
+    with open("website/data/data.json", "w") as f:
         f.write(json_str)

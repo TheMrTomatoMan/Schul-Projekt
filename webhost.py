@@ -1,13 +1,3 @@
-"""
-ESP8266WebServer.py
-===================
-Erweiterter HTTP-Server fuer MicroPython.
-Kompatibel mit dem Original, aber mit verbessertem Datei-Handling:
-- onNotFound-Handler bekommt (socket, path) statt nur (socket,)
-- MIME-Types erweitert (js, json, ico, svg)
-- Dateien werden automatisch aus docPath geladen
-"""
-
 import socket
 import uselect
 import os
@@ -21,7 +11,7 @@ notFoundHandler = None
 docPath         = "/"
 tplData         = {}
 
-mimeTypes = {
+mimeTypes = { 
     ".html": "text/html",
     ".css":  "text/css",
     ".js":   "application/javascript",
