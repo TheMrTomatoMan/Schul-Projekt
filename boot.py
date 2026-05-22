@@ -9,6 +9,10 @@ from write_to_json import json_write
 from write_to_xml import xml_write
 import time
 from wlan_trennen import wlan_trennen
+from hygrometer import boden_feuchte
+from sht30_output import sht_humidity, sht_temp
+from thermometer import temperatur2
+
 
 wlan_trennen()
 SSID     = "gsog-iot"
@@ -39,6 +43,13 @@ try:
             json_write()
             xml_write()
             last_update = time.time()
+            print(f"Temperatur am SHT30:        {sht_temp()}°C")
+            print(f"Luftfeuchtigkeit am SHT30:  {sht_humidity()}%REL")
+            print(f"Temperatur Sensor:          {temperatur2()}°C")
+            print(f"Bodenfeuchtigkeit:          {boden_feuchte()}°C")
+            print()
+            print("_______________")
+            print()
 except Exception as e:
     print("Fehler:", e)
     server.close()
