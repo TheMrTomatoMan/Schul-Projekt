@@ -1,3 +1,5 @@
+Was muss WIE angeschlossen werden
+
 Bodenfeuchte messgerät
 "+" auf 3.3V Anschließen
 "-" auf Ground Anschließen
